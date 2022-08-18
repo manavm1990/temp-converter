@@ -7,7 +7,6 @@ function App() {
   const [values, setValues] = useState({ celsius: 0, fahrenheit: 0 });
 
   const handleChange = (event) => {
-    // TODO: Refactor this to be more DRY
     if (event.target.id === "celsius") {
       setValues({
         celsius: event.target.value,
@@ -30,12 +29,12 @@ function App() {
       <form className="mx-auto mt-8 flex w-1/3 justify-between">
         <Input
           label="Celsius"
-          value={values.celsius}
+          value={Number(values.celsius)}
           changeHandler={handleChange}
         />
         <Input
           label="Fahrenheit"
-          value={values.fahrenheit}
+          value={Number(values.fahrenheit)}
           changeHandler={handleChange}
         />
       </form>
