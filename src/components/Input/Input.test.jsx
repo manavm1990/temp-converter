@@ -19,7 +19,7 @@ it("calls changeHandler whenever input is changed", () => {
   // Avoid using an empty string for the label
   render(<Input label="celsius" value={0} changeHandler={changeHandler} />);
 
-  // As per accessiblity standards, the input element is labelled with the label prop
+  // As per accessibility standards, the input element is labelled with the label prop
   const input = screen.getByLabelText("celsius");
 
   // Each key that is typed into the input should result in the changeHandler mock being called
