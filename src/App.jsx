@@ -1,18 +1,23 @@
-import React from "react";
+import { useState } from "react";
 import "./App.css";
 import Input from "./components/Input/Input";
 import tryConvert from "./lib/tryConvert";
 
 function App() {
-  const [values] = React.useState({ celsius: 0, fahrenheit: 0 });
+  const [values, setValues] = useState({ celsius: 0, fahrenheit: 0 });
 
   const handleChange = (event) => {
-    console.log(event.target.value);
-
+    // TODO: Refactor this to be more DRY
     if (event.target.id === "celsius") {
-      console.log(tryConvert(event.target.value, "toFahrenheit"));
+      setValues({
+        celsius: event.target.value,
+        fahrenheit: tryConvert(event.target.value, "toFahrenheit"),
+      });
     } else {
-      console.log(tryConvert(event.target.value, "toCelsius"));
+      setValues({
+        celsius: tryConvert(event.target.value, "toCelsius"),
+        fahrenheit: event.target.value,
+      });
     }
   };
 
