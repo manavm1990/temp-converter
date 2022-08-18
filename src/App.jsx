@@ -1,25 +1,8 @@
 import "./App.css";
-import logo from "./logo.svg";
+// TODO: Import and render 2 of the inputs
 
 function App() {
-  return (
-    <div className="text-center">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://beta.reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React (Beta Docs)
-        </a>
-      </header>
-    </div>
-  );
+  return <h1>Hello World</h1>;
 }
 
 export default App;
